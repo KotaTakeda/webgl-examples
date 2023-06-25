@@ -76,7 +76,7 @@ function main() {
 // have one object -- a simple two-dimensional square.
 //
 function initBuffers(gl) {
-
+  // position buffer
   // Create a buffer for the square's positions.
 
   const positionBuffer = gl.createBuffer();
@@ -89,18 +89,19 @@ function initBuffers(gl) {
   // Now create an array of positions for the square.
 
   const positions = [
-     1.0,  1.0,
+    1.0,  1.0,
     -1.0,  1.0,
-     1.0, -1.0,
+    1.0, -1.0,
     -1.0, -1.0,
   ];
-
+  
   // Now pass the list of positions into WebGL to build the
   // shape. We do this by creating a Float32Array from the
   // JavaScript array, then use it to fill the current buffer.
-
+  
   gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positions), gl.STATIC_DRAW);
-
+  
+  // Color buffer
   // Now set up the colors for the vertices
 
   var colors = [
